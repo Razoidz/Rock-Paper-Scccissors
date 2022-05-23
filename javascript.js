@@ -9,7 +9,7 @@ let playerChoice = userInput => {
     }
 }
 
-let ComputerPlay = () =>{
+let computerPlay = () =>{
     const randomNumber = Math.floor(Math.random() * 3);
     switch(randomNumber){
         case 0:
@@ -26,7 +26,7 @@ let ComputerPlay = () =>{
 
 };
 
-const determineWinner = (playerSelection, computerSelection) => {
+const result = (playerSelection, computerSelection) => {
     if (playerSelection === computerSelection){
         return 'its a draw!'
     }
@@ -58,9 +58,16 @@ const determineWinner = (playerSelection, computerSelection) => {
 };
 
 
+const playRound = () => {
+    const playerSelection = playerChoice('paper');
+    const computerSelection = computerPlay('');
+    console.log(`you threw ${playerChoice}`);
+    console.log(`computer threw ${computerPlay}`);
 
+    console.log(result(playerSelection,computerSelection));
+};
 
-
+playRound()
 
 
 
